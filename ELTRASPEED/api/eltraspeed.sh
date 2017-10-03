@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd $HOME/MaTaDoR/api
+cd $HOME/eltraspeed/api
 
 install() {
 		sudo apt-get update
