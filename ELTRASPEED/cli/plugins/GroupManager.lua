@@ -1,4 +1,4 @@
-﻿--Begin GroupManager.lua By @ElTRASPEEDbot
+--Begin GroupManager.lua By @ElTRASPEEDbot
 local function modadd(msg)
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -1975,8 +1975,8 @@ end
 end
 end
 
---------Mutes---------
----------------Mute Gif-------------------
+--------locks---------
+---------------lock Gif-------------------
 local function mute_gif(msg, data, target) 
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -2034,7 +2034,7 @@ return "قفل کردن # تصاویر متحرک غیر فعال شد🔊\n*〰
 end
 end
 end
----------------Mute Game-------------------
+---------------lock Game-------------------
 local function mute_game(msg, data, target) 
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -2092,7 +2092,7 @@ return "قفل کردن #بازی های تحت وب  غیر فعال شد🔊\n
 end
 end
 end
----------------Mute Inline-------------------
+---------------lock Inline-------------------
 local function mute_inline(msg, data, target) 
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -2150,7 +2150,7 @@ return "قفل کردن #کیبورد شیشه ای  غیر فعال شد🔊\n*
 end
 end
 end
----------------Mute Text-------------------
+---------------lock Text-------------------
 local function mute_text(msg, data, target) 
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -2208,7 +2208,7 @@ return "قفل کردن # متن غیر فعال شد🔊\n*〰〰〰〰〰〰�
 end
 end
 end
----------------Mute photo-------------------
+---------------lock photo-------------------
 local function mute_photo(msg, data, target) 
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -2266,7 +2266,7 @@ return "قفل کردن # عکس غیر فعال شد🔊\n*〰〰〰〰〰〰�
 end
 end
 end
----------------Mute Video-------------------
+---------------lock Video-------------------
 local function mute_video(msg, data, target) 
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -2324,7 +2324,7 @@ return "قفل کردن #ویدیو غیر فعال شد🔊\n*〰〰〰〰〰�
 end
 end
 end
----------------Mute Audio-------------------
+---------------lock Audio-------------------
 local function mute_audio(msg, data, target) 
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -2382,7 +2382,7 @@ return "قفل کردن #اهنگ غیر فعال شد🔊\n*〰〰〰〰〰〰�
 end
 end
 end
----------------Mute Voice-------------------
+---------------lock Voice-------------------
 local function mute_voice(msg, data, target) 
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -2440,7 +2440,7 @@ return "قفل کردن #صدا (وویس) غیر فعال شد🔊\n*〰〰〰�
 end
 end
 end
----------------Mute Sticker-------------------
+---------------lock Sticker-------------------
 local function mute_sticker(msg, data, target) 
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -2498,7 +2498,7 @@ return "قفل کردن #استیکر غیر فعال شد🔊\n*〰〰〰〰〰
 end 
 end
 end
----------------Mute Contact-------------------
+---------------lock Contact-------------------
 local function mute_contact(msg, data, target) 
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -2556,7 +2556,7 @@ return "قفل کردن #ارسال مخاطب غیر فعال شد🔊\n*〰〰
 end
 end
 end
----------------Mute Forward-------------------
+---------------lock Forward-------------------
 local function mute_forward(msg, data, target) 
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -2614,7 +2614,7 @@ return "قفل کردن #فوروارد غیر فعال شد🔊\n*〰〰〰〰�
 end
 end
 end
----------------Mute Location-------------------
+---------------lock Location-------------------
 local function mute_location(msg, data, target) 
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -2672,7 +2672,7 @@ return "قفل کردن #موقعیت غیر فعال شد🔊\n*〰〰〰〰〰
 end
 end
 end
----------------Mute Document-------------------
+---------------lock Document-------------------
 local function mute_document(msg, data, target) 
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -2730,7 +2730,7 @@ return "قفل کردن #اسناد غیر فعال شد🔊\n*〰〰〰〰〰�
 end
 end
 end
----------------Mute TgService-------------------
+---------------lock TgService-------------------
 local function mute_tgservice(msg, data, target) 
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -2789,7 +2789,7 @@ end
 end
 end
 
----------------Mute Keyboard-------------------
+---------------lock Keyboard-------------------
 local function mute_keyboard(msg, data, target) 
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
@@ -3605,7 +3605,7 @@ if matches[2] == 'cmds' or matches[2] == 'دستورات' then
 			end
 end
 
-if matches[1] == "mute" and is_mod(msg) or matches[1]== "قفل" and is_mod(msg) or matches[1] == "Mute" and is_mod(msg) then
+if matches[1] == "mute" and is_mod(msg) or matches[1]== "قفل" and is_mod(msg) or matches[1] == "lock" and is_mod(msg) then
 local target = msg.to.id
 if matches[2] == 'all' or matches[2] == 'همه' then
 local hash = 'muteall:'..msg.to.id
@@ -4090,7 +4090,7 @@ return "*زبان گروه تنظیم شد به : فارسی*\nسفارش توس
 end
 end
 
- if matches[1] == 'mutetime' and is_mod(msg) or matches[1] == 'Mutetime' and is_mod(msg) or matches[1] == 'زمان قفل' and is_mod(msg) then
+ if matches[1] == 'mutetime' and is_mod(msg) or matches[1] == 'locktime' and is_mod(msg) or matches[1] == 'زمان قفل' and is_mod(msg) then
 local hash = 'muteall:'..msg.to.id
 local hour = tonumber(matches[2])
 local num1 = (tonumber(hour) * 3600)
@@ -4101,54 +4101,54 @@ local num3 = tonumber(second)
 local num4 = tonumber(num1 + num2 + num3)
 redis:setex(hash, num4, true)
 if not lang then
- return "_Mute all has been enabled for_ \n⏺ *hours :* `"..matches[2].."`\n⏺ *minutes :* `"..matches[3].."`\n⏺ *seconds :* `"..matches[4].."`"..""
+ return "_lock all has been enabled for_ \n⏺ *hours :* `"..matches[2].."`\n⏺ *minutes :* `"..matches[3].."`\n⏺ *seconds :* `"..matches[4].."`"..""
  elseif lang then
  return "بی صدا کردن فعال شد در \n⏺ ساعت : "..matches[2].."\n⏺ دقیقه : "..matches[3].."\n⏺ ثانیه : "..matches[4]..""
  end
  end
- if matches[1] == 'mutehours' or matches[1] == 'Mutehours' or matches[1]== 'ساعت قفل' and is_mod(msg) then
+ if matches[1] == 'mutehours' or matches[1] == 'lockhours' or matches[1]== 'ساعت قفل' and is_mod(msg) then
        local hash = 'muteall:'..msg.to.id
 local hour = matches[2]
 local num1 = tonumber(hour) * 3600
 local num4 = tonumber(num1)
 redis:setex(hash, num4, true)
 if not lang then
- return "Mute all has been enabled for \n⏺ hours : "..matches[2]..""
+ return "lock all has been enabled for \n⏺ hours : "..matches[2]..""
  elseif lang then
  return "بی صدا کردن فعال شد در \n⏺ ساعت : "..matches[2]..""
  end
  end
-  if matches[1] == 'muteminutes' or matches[1] == 'Muteminutes' or matches[1]== 'دقیقه قفل'  and is_mod(msg) then
+  if matches[1] == 'muteminutes' or matches[1] == 'lockminutes' or matches[1]== 'دقیقه قفل'  and is_mod(msg) then
  local hash = 'muteall:'..msg.to.id
 local minutes = matches[2]
 local num2 = tonumber(minutes) * 60
 local num4 = tonumber(num2)
 redis:setex(hash, num4, true)
 if not lang then
- return "Mute all has been enabled for \n⏺ minutes : "..matches[2]..""
+ return "lock all has been enabled for \n⏺ minutes : "..matches[2]..""
  elseif lang then
  return "بی صدا کردن فعال شد در \n⏺ دقیقه : "..matches[2]..""
  end
  end
-  if matches[1] == 'muteseconds' or matches[1] == 'Muteseconds' or matches[1] == 'ثانیه قفل'  and is_mod(msg) then
+  if matches[1] == 'muteseconds' or matches[1] == 'lockseconds' or matches[1] == 'ثانیه قفل'  and is_mod(msg) then
        local hash = 'muteall:'..msg.to.id
 local second = matches[2]
 local num3 = tonumber(second) 
 local num4 = tonumber(num3)
 redis:setex(hash, num3, true)
 if not lang then
- return "Mute all has been enabled for \n⏺ seconds : "..matches[2]..""
+ return "lock all has been enabled for \n⏺ seconds : "..matches[2]..""
  elseif lang then
  return "بی صدا کردن فعال شد در \n⏺ ثانیه : "..matches[2]..""
  end
  end
- if (matches[1] == 'muteall' or matches[1] == 'Muteall' or matches[1] == 'موقعیت') and (matches[2] == 'status' or matches[2] == 'قفل') and is_mod(msg) then
+ if (matches[1] == 'muteall' or matches[1] == 'lockall' or matches[1] == 'موقعیت') and (matches[2] == 'status' or matches[2] == 'قفل') and is_mod(msg) then
          local hash = 'muteall:'..msg.to.id
       local mute_time = redis:ttl(hash)
 		
 		if tonumber(mute_time) < 0 then
 		if not lang then
-		return '_Mute All is Disable._'
+		return '_lock All is Disable._'
 		else
 		return '_بیصدا بودن گروه غیر فعال است._'
 		end
@@ -4189,11 +4189,11 @@ text = [[🔖*нєℓρ ElTRASPEED Ɓσт*
 👆 `To Get Help Lock`
 *👉 Lockhelp*
 ➖➖➖
-👆 `To Get Help Mute`
-*👉 Mutehelp*
+👆 `To Get Help lock`
+*👉 lockhelp*
 ➖➖➖
-👆 `To Get Help MuteTime`
-*👉 Mutetimehelp*
+👆 `To Get Help lockTime`
+*👉 locktimehelp*
 ➖➖➖
 👆 `To Get Help Fun`
 *👉 Funhelp*
@@ -4517,8 +4517,8 @@ end
 if matches[1] == "00" and is_mod(msg) or matches[1] == "00" and is_mod(msg) or matches[1] == "00" and is_mod(msg)then
 if not lang then
 text = [[
-#Mute commands
-🔇*Mute* 
+#lock commands
+🔇*lock* 
 `[gif , photo , document , sticker , video , text , forward , location , audio , voice , contact ,tgservice , inline , all , keyboard]`
 🔊*Unmute*
  `[gif , photo , document , sticker , video , text , forward , location , audio , voice , contact, tgservice , inline , all , keybord]`
@@ -4812,26 +4812,26 @@ text = [[
 return text
 end
 
-if matches[1] == "mutetimehelp" or matches[1] == "Mutetimehelp" or matches[1] == "راهنمای قفل زمانی" then
+if matches[1] == "mutetimehelp" or matches[1] == "locktimehelp" or matches[1] == "راهنمای قفل زمانی" then
 if not lang then
 text = [[
 ̶M̶α̶Ƭ̶α̶Ɗ̶σ̶R̶ ̶M̶υ̶т̶є̶т̶ι̶м̶є̶ ̶Ƈ̶σ̶м̶м̶α̶η̶ɗ̶ѕ:
 *⚡️тo ѕee тнe coммαɴdѕ oғ yoυr deѕιred ιтeм ѕυвмιт*
 🌐 ҽɳɠʅιʂԋ cσɱɱαɳԃʂ :
-*👉 Mute all*
-⏺Mute groups
+*👉 lock all*
+⏺lock groups
 ➖➖➖
-*👉 Mute* (hour) (minute)  (seconds)
-🔸Mute group at this time 
+*👉 lock* (hour) (minute)  (seconds)
+🔸lock group at this time 
 ➖➖➖
-*👉 Mutehours* (number)
-⏺Mute group at this time 
+*👉 lockhours* (number)
+⏺lock group at this time 
 ➖➖➖
-*👉 Muteminutes* (number)
-🔸Mute group at this time 
+*👉 lockminutes* (number)
+🔸lock group at this time 
 ➖➖➖
-*👉 Muteseconds* (number)
-⏺Mute group at this time 
+*👉 lockseconds* (number)
+⏺lock group at this time 
 ➖➖➖
 *👉 Unmute all*
 🔸Unmute group at this time 
@@ -4846,15 +4846,15 @@ _To Change The LanGuage_
 elseif lang then
 text = [[
 قفل همه
-Mute groups
+lock groups
 قفل (hour) (minute) (seconds)
-Mute group at this time 
+lock group at this time 
 ساعت قفل (number)
-Mute group at this time 
+lock group at this time 
 دقیقه قفل (number)
-Mute group at this time 
+lock group at this time 
 ثانیه قفل (number)
-Mute group at this time 
+lock group at this time 
 بازکردن همه
 Unmute group at this time 
 *⌨️ زبان ربات فارسی !*
